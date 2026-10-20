@@ -1,0 +1,165 @@
+
+                 8Ball for Teleconference 1.0.0 for The Major BBS v10
+
+               Copyright (c) 2026 Elwynor Technologies.
+   Originally HOTELeconference 8Ball by Randall R. Spangler, annex.com.
+   Converted for The Major BBS v10 by Mark Laudenbach - github.com/laudenbachm
+
+ This file is generated from ELW8BTEL.MST by TOOLS\MKMSG.PY.  Edit the
+ template, not this file, when changing the module's source.
+
+ Settings are not in this file.  Change them online: in Teleconference,
+ a Sysop types 8BALL SET.  Changes take effect immediately.
+
+
+LEVEL6 {8Ball for Teleconference}
+
+ 8BALL FOR TELECONFERENCE - TEXT
+
+ Values in these messages are named text variables, E8B_xxx, so you
+ can reword or reorder the text freely.
+
+HELP {<ESC>[0;1;36mThe Magic 8-Ball <ESC>[0;36mversion <TV:E8B_VERSION>
+<ESC>[1;37mAsk it anything:  <ESC>[33m<TV:E8B_CMD> Should I log off now?
+<ESC>[37mOr just shake it: <ESC>[33m<TV:E8B_CMD>
+<ESC>[0;36mEveryone in the channel sees the answer.  You can ask once every
+<TV:E8B_DELAY> seconds.
+} T 8-Ball: help
+
+ What the person who asked sees, above the 8-Ball picture.
+
+ASKQ {<ESC>[0;1;35mYou consult the Magic <ESC>[34m8-Ball<ESC>[35m about <ESC>[32m<TV:E8B_QUESTION><ESC>[35m...
+} T 8-Ball: you asked a question
+
+ASKNQ {<ESC>[0;1;35mYou give the Magic <ESC>[34m8-Ball<ESC>[35m a good shake...
+} T 8-Ball: you shook it without a question
+
+ The 8-Ball picture.  The answer appears inside it on two lines,
+ E8B_LINE1 and E8B_LINE2, each centered in 12 characters.
+
+BALL {<ESC>[0;1;30m   <HEX:DC*2><HEX:DB*8><HEX:DC*2>
+ <HEX:DC><HEX:DB*14><HEX:DC>
+<HEX:DC><HEX:DB*16><HEX:DC>
+<HEX:DB*3><ESC>[37m<TV:E8B_LINE1:C:12><ESC>[30m<HEX:DB*3>
+<HEX:DB*3><ESC>[37m<TV:E8B_LINE2:C:12><ESC>[30m<HEX:DB*3>
+<HEX:DF><HEX:DB*16><HEX:DF>
+ <HEX:DF><HEX:DB*14><HEX:DF>
+   <HEX:DF*2><HEX:DB*8><HEX:DF*2><ESC>[0m
+} T 8-Ball: the picture with the answer inside
+
+ The line everyone else in the channel sees, on this board and on
+ boards linked through MajorLink.  Teleconference shows it as ordinary
+ chat from the person who asked, so it appears after "From <user>:".
+ Keep it to one line, and plain text: other boards may not show
+ colors the way yours does.
+
+PUBQ {[Magic 8-Ball] "<TV:E8B_QUESTION>" ... <TV:E8B_ANSWER>} T 8-Ball: line for the channel, with a question
+
+PUBNQ {[Magic 8-Ball] shakes ... <TV:E8B_ANSWER>} T 8-Ball: line for the channel, no question
+
+WAIT {<ESC>[0;1;33mThe 8-Ball is still settling.  Try again in <TV:E8B_WAIT> seconds.
+} T 8-Ball: asked again too soon
+
+NOREPLY {<ESC>[0;1;31mThe 8-Ball has no answers in it.  (A Sysop can add them: REPLY01 to REPLY30.)
+} T 8-Ball: every reply is blank
+
+RESTING {<ESC>[0;1;33mThe Magic 8-Ball is resting right now.  Try again later.
+} T 8-Ball: turned off by the Sysop
+
+NOACCESS {<ESC>[0;1;31mSorry, you don't have access to the Magic 8-Ball.
+} T 8-Ball: no access
+
+SQUELCH {<ESC>[0;1;31mYou can't use the 8-Ball while you are squelched.
+} T 8-Ball: user is squelched
+
+NOCHAN {<ESC>[0;1;33mThe Magic 8-Ball isn't available in <TV:E8B_CHANNEL>.
+} T 8-Ball: not allowed in this channel
+
+ The Sysop's settings editor: 8BALL SET.
+
+SETHDR {<ESC>[0;1;36m8Ball for Teleconference <TV:E8B_VERSION> - settings
+} T 8-Ball settings: heading
+
+SETROW {<ESC>[0;1;33m<TV:E8B_SETNUM:R:2>. <ESC>[37m<TV:E8B_SETNAME>: <ESC>[32m<TV:E8B_SETVALUE>
+} T 8-Ball settings: one setting
+
+SETFOOT {<ESC>[0;36mChange one: <ESC>[1;37m<TV:E8B_CMD> SET <ESC>[33m<number> <value>
+<ESC>[0;36mAll back to the defaults: <ESC>[1;37m<TV:E8B_CMD> SET DEFAULTS
+<ESC>[0;36mWith the pick-a-reply key: <ESC>[1;37m<TV:E8B_CMD> /REPLY<ESC>[33mn<ESC>[37m question<ESC>[0;36m gives reply n.
+} T 8-Ball settings: how to change them
+
+SETOK {<ESC>[0;1;32m<TV:E8B_SETNAME> is now <ESC>[37m<TV:E8B_SETVALUE><ESC>[32m.
+} T 8-Ball settings: changed
+
+SETBAD {<ESC>[0;1;31m<TV:E8B_SETNAME> needs <TV:E8B_SETRANGE>.
+<ESC>[0;36mIt is still <ESC>[1;37m<TV:E8B_SETVALUE><ESC>[0;36m.
+} T 8-Ball settings: value not accepted
+
+SETDEF {<ESC>[0;1;32mEvery 8-Ball setting is back to its default.
+} T 8-Ball settings: reset
+
+ The answers.  Each is "first line|second line": the two lines shown
+ inside the 8-Ball picture (12 characters each fit).  Other users see
+ them joined with a space.  Leave a reply blank to remove it; the
+ 8-Ball picks only from the ones that have text.  Keep each under 80
+ characters.
+
+REPLY01 {My Sources|Say No} T 8-Ball answer 1
+
+REPLY02 {Signs Point|To Yes} T 8-Ball answer 2
+
+REPLY03 {Cannot|Predict Now} T 8-Ball answer 3
+
+REPLY04 {It Is|Decidedly So} T 8-Ball answer 4
+
+REPLY05 {Better Not|Tell You Now} T 8-Ball answer 5
+
+REPLY06 {My Reply|Is No} T 8-Ball answer 6
+
+REPLY07 {Yes|Definitely} T 8-Ball answer 7
+
+REPLY08 {Reply Hazy|Try Again} T 8-Ball answer 8
+
+REPLY09 {Don't Count|On It} T 8-Ball answer 9
+
+REPLY10 {Outlook|Good} T 8-Ball answer 10
+
+REPLY11 {Very|Doubtful} T 8-Ball answer 11
+
+REPLY12 {Concentrate|& Ask Again} T 8-Ball answer 12
+
+REPLY13 {It Is|Certain} T 8-Ball answer 13
+
+REPLY14 {You May|Rely On It} T 8-Ball answer 14
+
+REPLY15 {Outlook Not|So Good} T 8-Ball answer 15
+
+REPLY16 {As I See|It, Yes} T 8-Ball answer 16
+
+REPLY17 {Most|Likely} T 8-Ball answer 17
+
+REPLY18 {Without|A Doubt} T 8-Ball answer 18
+
+REPLY19 {Ask Again|Later} T 8-Ball answer 19
+
+REPLY20 {YES} T 8-Ball answer 20
+
+REPLY21 {NO} T 8-Ball answer 21
+
+REPLY22 {} T 8-Ball answer 22
+
+REPLY23 {} T 8-Ball answer 23
+
+REPLY24 {} T 8-Ball answer 24
+
+REPLY25 {} T 8-Ball answer 25
+
+REPLY26 {} T 8-Ball answer 26
+
+REPLY27 {} T 8-Ball answer 27
+
+REPLY28 {} T 8-Ball answer 28
+
+REPLY29 {} T 8-Ball answer 29
+
+REPLY30 {} T 8-Ball answer 30
