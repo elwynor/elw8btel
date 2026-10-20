@@ -1,0 +1,120 @@
+
+                       8Ball for Teleconference
+                   for The Major BBS v10 - version 1.0.0
+
+              Copyright (c) 2026 Elwynor Technologies.
+   Originally HOTELeconference 8Ball by Randall R. Spangler, annex.com.
+     8Ball converted for The Major BBS v10 by Mark Laudenbach -
+                    https://github.com/laudenbachm
+
+
+WHAT IT DOES
+------------
+
+The Magic 8-Ball for the stock Teleconference.  In any channel, type
+
+     8BALL Should I log off now?
+
+You see the 8-Ball picture with its answer inside.  Everyone else in the
+channel sees one line of chat from you, such as
+
+     From Mark: [Magic 8-Ball] "Should I log off now?" ... Outlook Good
+
+Because the answer is sent as ordinary chat, it also reaches users on
+other boards in a linked channel, such as MajorLink.  Those boards don't
+need 8Ball installed.
+
+     8BALL              shake it without a question
+     8BALL ?            help (8BALL HELP works too)
+
+Each user can ask once every 30 seconds (the Sysop can change this).
+
+
+INSTALLING
+----------
+
+1. Shut down the BBS.
+2. Copy ELW8BTEL.DLL, ELW8BTEL.MDF, ELW8BTEL.MSG and ELW8BTEL.RLN into the
+   BBS folder.
+3. Start the BBS.  The module loads by itself (it has no menu entry) and
+   adds the 8BALL command to Teleconference.  The Audit Trail shows
+   "8BALL FOR TELECONFERENCE  v1.0.0 loaded (command 8BALL)".
+
+The module needs Teleconference (GALTELE).  If Teleconference isn't
+installed, the Audit Trail says "8BALL NOT STARTED" with the version and
+the reason, and the rest of the board runs as normal.
+
+The settings file, ELW8BTEL.DAT, is created on the first start.
+
+The module is a 32-bit (Win32) DLL, like The Major BBS v10 itself.  It runs
+on 64-bit Windows.
+
+
+SETTINGS (SYSOPS)
+-----------------
+
+Settings are changed online, while the board runs.  Changes take effect
+immediately and are written to the Audit Trail.  There are no
+configuration editor options.  In Teleconference, a user with the SYSOP
+key types
+
+     8BALL SET                    list the settings
+     8BALL SET <number> <value>   change one
+     8BALL SET DEFAULTS           put them all back to the defaults
+
+  1. 8-Ball answers questions          YES or NO.  Default YES.
+  2. Key to use the 8-Ball             A key or lock expression.  Blank
+                                       (the default) lets everyone use it.
+                                       Enter - to blank it.
+  3. Key to pick a reply and skip      Default SYSOP.  Blank = nobody.
+     the wait                          A holder can also type
+                                       8BALL /REPLY3 question
+                                       to get reply 3.
+  4. Seconds a user waits between      0 to 3600.  Default 30.
+     uses
+  5. Channels it works in              Channel names separated by
+                                       commas, for example
+                                       Main, MajorLink
+                                       Blank (the default) or * means
+                                       every channel.  Enter - to blank it.
+
+Users who are squelched in Teleconference can't use the 8-Ball.
+
+
+CHANGING THE TEXT AND ANSWERS
+-----------------------------
+
+All text is in ELW8BTEL.MSG (configuration editor, level 6).  Values are
+named text variables (E8B_QUESTION, E8B_ANSWER and so on), so the text
+can be reworded freely.  Changes to the .MSG take effect after the BBS is
+restarted.
+
+The answers are REPLY01 to REPLY30.  21 are filled in.  Each is written
+
+     first line|second line
+
+which are the two lines shown inside the 8-Ball picture (12 characters
+each fit).  Everyone else sees them joined with a space.  Blank replies
+are skipped, so you add or remove answers just by editing the text.  Keep
+each answer under 80 characters and in plain text.
+
+PUBQ and PUBNQ are the line the channel sees.  Keep them to one plain
+line: boards on the other end of a link may not show colors the way yours
+does.
+
+Note: copying a new ELW8BTEL.MSG over the old one replaces any text you
+changed in it.
+
+
+VERSION HISTORY
+---------------
+
+1.0.0 (19 October 2026)
+
+  First release for The Major BBS v10, converted from HOTELeconference
+  8Ball 2.00 (1997).
+  - Works in the stock Teleconference, including web users and linked
+    channels such as MajorLink.
+  - Online settings (8BALL SET) instead of configuration editor options.
+  - Choose which channels the 8-Ball works in.
+  - Answers can be added or removed just by editing the text.
