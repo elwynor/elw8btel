@@ -57,6 +57,9 @@ ipch/
 *.exp
 *.log
 
+# --- Release packages are attached to GitHub releases, never committed ---
+/DIST/*.zip
+
 # --- Build output (keep the BUILD/ folder, ignore its contents) ---
 /BUILD/*
 !/BUILD/.gitkeep
