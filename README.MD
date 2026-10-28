@@ -120,14 +120,6 @@ at [Elwynor Technologies](https://github.com/elwynor).
 
 Originally HOTELeconference 8Ball by Randall R. Spangler, annex.com.
 
----
-
-## 💖 Tips / Donations
-
-If this module is useful to you, tips are appreciated and never expected:
-
-- Cash App: https://cash.app/$laudenbachm
-- Ko-fi: https://ko-fi.com/laudenbachm
 
 ---
 
